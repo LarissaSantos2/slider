@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* estilização do corpo da página */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(#000, #282828);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 55rem;
+}
+
+.slider-wrapper {
+    position: relative;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 60px 90px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  height: 500px;
+}
+
+/* definição imagem */
+.slider img {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+/* navegação slider */
+.slider-nav {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 1;
+}
+
+/* transição slides */
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+/* efeito após passar o mouse */
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+/* desativar barra de scrool navegador */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;   
+}
